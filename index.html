@@ -48,9 +48,21 @@
             color: white;
             border-radius: 5px;
             cursor: pointer;
-            background: #0057b8; /* Example button color */
             text-decoration: none; /* Remove underline */
             display: inline-block; /* Ensure button behaves correctly */
+            margin: 5px 0; /* Add margin for spacing */
+        }
+
+        .btn-contacts {
+            background: linear-gradient(135deg, #0057b8, #003d82); /* Contacts button color */
+        }
+
+        .btn-survey {
+            background: linear-gradient(135deg, #28a745, #1e7d32); /* Survey button color */
+        }
+
+        .btn-guide {
+            background: linear-gradient(135deg, #ff9800, #e68900); /* Guide button color */
         }
 
         /* Contact Dropdown */
@@ -84,7 +96,7 @@
     <div class="block">
         <h2 style="color: #0057b8;">🔧 Troubleshooting & Contacts</h2>
         <p>If you need support, reach out to a team member below.</p>
-        <button class="btn" onclick="toggleDropdown()">View Contacts</button>
+        <button class="btn btn-contacts" onclick="toggleDropdown()">View Contacts</button>
         <div id="contactDropdown" class="dropdown">
             <div class="contact-item" onclick="dial('8325476607')">
                 <img src="https://via.placeholder.com/30" class="contact-img" alt="Dalton Richardson">
@@ -105,14 +117,14 @@
     <div class="block">
         <h2 style="color: #28a745;">📋 Feedback Survey</h2>
         <p>Share your thoughts to help us improve.</p>
-        <a href="#" class="btn">Take the Survey</a>
+        <a href="#" class="btn btn-survey">Take the Survey</a>
     </div>
 
     <!-- CollaboratOR Guide Block -->
     <div class="block">
         <h2 style="color: #ff9800;">📖 CollaboratOR Guide</h2>
         <p>Need help using CollaboratOR? View the guide.</p>
-        <a href="#" class="btn">View Guide</a>
+        <a href="#" class="btn btn-guide">View Guide</a>
     </div>
 </div>
 
