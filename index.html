@@ -1,0 +1,114 @@
+<style>
+    /* Global Page Styling */
+    body, html {
+        margin: 0;
+        padding: 0;
+        height: 100%;
+        overflow-x: hidden; /* Prevents side-scroll */
+        overflow-y: auto;  /* Uses only the main scrollbar */
+        font-family: Arial, sans-serif;
+        background-color: #f4f4f4;
+    }
+
+    /* Container for Blocks */
+    .container {
+        display: flex;
+        justify-content: center;
+        gap: 20px;
+        flex-wrap: wrap;
+        max-width: 1000px;
+        margin: 40px auto;
+    }
+
+    /* Individual Blocks */
+    .block {
+        width: 300px;
+        background: #f8f9fa;
+        padding: 20px;
+        border-radius: 10px;
+        text-align: center;
+        box-shadow: 0px 4px 6px rgba(0,0,0,0.1);
+        overflow: hidden; /* Prevents inner scroll */
+        min-height: 250px; /* Keeps consistent size */
+    }
+
+    /* Profile Images */
+    .block img {
+        width: 80px;
+        height: 80px;
+        border-radius: 50%;
+    }
+
+    /* Buttons */
+    .block a {
+        display: inline-block;
+        text-decoration: none;
+        color: white;
+        padding: 10px 15px;
+        border-radius: 5px;
+        margin-top: 10px;
+    }
+
+    /* Button Colors */
+    .troubleshooting { color: #0057b8; }
+    .feedback { background: #28a745; }
+    .guide { background: #ff9800; }
+
+    /* Remove Scrollbar Inside Main Content */
+    .container::-webkit-scrollbar {
+        display: none;
+    }
+
+    /* Ensures all content expands naturally */
+    .container {
+        overflow: visible;
+    }
+</style>
+
+<!-- Content Blocks -->
+<div class="container">
+
+    <!-- Troubleshooting Block -->
+    <div class="block">
+        <h2 class="troubleshooting">🔧 Troubleshooting Team</h2>
+        
+        <div>
+            <img src="CONTACT_1_IMAGE_URL" alt="Person 1">
+            <p><strong>John Doe</strong><br>Technical Support<br>
+            <a href="tel:+1234567890" style="color: #0057b8;">📞 (123) 456-7890</a></p>
+        </div>
+
+        <div>
+            <img src="CONTACT_2_IMAGE_URL" alt="Person 2">
+            <p><strong>Jane Smith</strong><br>OR Specialist<br>
+            <a href="tel:+1987654321" style="color: #0057b8;">📞 (987) 654-3210</a></p>
+        </div>
+
+        <div>
+            <img src="CONTACT_3_IMAGE_URL" alt="Person 3">
+            <p><strong>Mike Johnson</strong><br>AV Technician<br>
+            <a href="tel:+1122334455" style="color: #0057b8;">📞 (112) 233-4455</a></p>
+        </div>
+
+        <div>
+            <img src="CONTACT_4_IMAGE_URL" alt="Person 4">
+            <p><strong>Sarah Lee</strong><br>IT Administrator<br>
+            <a href="tel:+1222333444" style="color: #0057b8;">📞 (122) 233-3444</a></p>
+        </div>
+    </div>
+
+    <!-- Feedback Survey Block -->
+    <div class="block">
+        <h2>📋 Feedback Survey</h2>
+        <p>Share your thoughts to help us improve.</p>
+        <a href="YOUR_SURVEY_LINK_HERE" class="feedback">Take the Survey</a>
+    </div>
+
+    <!-- CollaboratOR Guide Block -->
+    <div class="block">
+        <h2>📖 CollaboratOR Guide</h2>
+        <p>Need help using CollaboratOR? View the guide.</p>
+        <a href="YOUR_USER_GUIDE_LINK_HERE" class="guide">View Guide</a>
+    </div>
+
+</div>
