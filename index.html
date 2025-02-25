@@ -58,6 +58,16 @@
             border-radius: 5px;
             margin: 3px 0;
             cursor: pointer;
+            display: flex;
+            align-items: center; /* Align items vertically */
+            gap: 10px; /* Space between image and text */
+        }
+
+        .contact-img {
+            width: 30px; /* Size of the circular image */
+            height: 30px; /* Size of the circular image */
+            border-radius: 50%; /* Circular shape */
+            object-fit: cover; /* Cover the area without stretching */
         }
     </style>
 </head>
@@ -69,9 +79,18 @@
         <p>If you need support, reach out to a team member below.</p>
         <button class="btn" onclick="toggleDropdown()">View Contacts</button>
         <div id="contactDropdown" class="dropdown">
-            <div class="contact-item" onclick="dial('8325476607')">Dalton Richardson - Supervisor On-Site Services</div>
-            <div class="contact-item" onclick="dial('8323240026')">Andrew Moore - Customer Success Utilization Manager</div>
-            <div class="contact-item" onclick="dial('8329158038')">Daniel Stoney - Surgical Video Rep</div>
+            <div class="contact-item" onclick="dial('8325476607')">
+                <img src="https://via.placeholder.com/30" class="contact-img" alt="Dalton Richardson">
+                <span>Dalton Richardson - Supervisor On-Site Services</span>
+            </div>
+            <div class="contact-item" onclick="dial('8323240026')">
+                <img src="https://via.placeholder.com/30" class="contact-img" alt="Andrew Moore">
+                <span>Andrew Moore - Customer Success Utilization Manager</span>
+            </div>
+            <div class="contact-item" onclick="dial('8329158038')">
+                <img src="https://via.placeholder.com/30" class="contact-img" alt="Daniel Stoney">
+                <span>Daniel Stoney - Surgical Video Rep</span>
+            </div>
         </div>
     </div>
 
