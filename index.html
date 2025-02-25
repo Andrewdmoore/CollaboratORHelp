@@ -1,114 +1,178 @@
-<style>
-    /* Global Page Styling */
-    body, html {
-        margin: 0;
-        padding: 0;
-        height: 100%;
-        overflow-x: hidden; /* Prevents side-scroll */
-        overflow-y: auto;  /* Uses only the main scrollbar */
-        font-family: Arial, sans-serif;
-        background-color: #f4f4f4;
-    }
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CollaboratOR Support</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        /* Global Styles */
+        body {
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #074089;
+            color: #333;
+        }
 
-    /* Container for Blocks */
-    .container {
-        display: flex;
-        justify-content: center;
-        gap: 20px;
-        flex-wrap: wrap;
-        max-width: 1000px;
-        margin: 40px auto;
-    }
+        /* Overlay Effect for Readability */
+        body::after {
+            content: "";
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(255, 255, 255, 0.3);
+            z-index: -1;
+        }
 
-    /* Individual Blocks */
-    .block {
-        width: 300px;
-        background: #f8f9fa;
-        padding: 20px;
-        border-radius: 10px;
-        text-align: center;
-        box-shadow: 0px 4px 6px rgba(0,0,0,0.1);
-        overflow: hidden; /* Prevents inner scroll */
-        min-height: 250px; /* Keeps consistent size */
-    }
+        /* Container */
+        .container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 30px 15px; /* Adjusted padding */
+            gap: 15px;
+            min-height: 100vh; /* Allows it to take the full height */
+        }
 
-    /* Profile Images */
-    .block img {
-        width: 80px;
-        height: 80px;
-        border-radius: 50%;
-    }
+        /* Blocks */
+        .block {
+            width: 100%;
+            max-width: 300px;
+            background: rgba(255, 255, 255, 0.95);
+            padding: 15px;
+            border-radius: 10px;
+            text-align: center;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
 
-    /* Buttons */
-    .block a {
-        display: inline-block;
-        text-decoration: none;
-        color: white;
-        padding: 10px 15px;
-        border-radius: 5px;
-        margin-top: 10px;
-    }
+        .block:hover {
+            transform: translateY(-5px);
+            box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.15);
+        }
 
-    /* Button Colors */
-    .troubleshooting { color: #0057b8; }
-    .feedback { background: #28a745; }
-    .guide { background: #ff9800; }
+        /* Buttons */
+        .btn {
+            display: inline-block;
+            padding: 8px 12px;
+            font-size: 14px;
+            text-decoration: none;
+            color: white;
+            border-radius: 5px;
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
 
-    /* Remove Scrollbar Inside Main Content */
-    .container::-webkit-scrollbar {
-        display: none;
-    }
+        .btn-contacts { background: linear-gradient(135deg, #0057b8, #003d82); }
+        .btn-survey { background: linear-gradient(135deg, #28a745, #1e7d32); }
+        .btn-guide { background: linear-gradient(135deg, #ff9800, #e68900); }
 
-    /* Ensures all content expands naturally */
-    .container {
-        overflow: visible;
-    }
-</style>
+        .btn:hover {
+            transform: scale(1.05);
+        }
 
-<!-- Content Blocks -->
+        /* Contact Dropdown */
+        .dropdown {
+            display: none;
+            opacity: 0;
+            transform: translateY(-10px);
+            transition: opacity 0.3s ease, transform 0.3s ease;
+        }
+
+        .dropdown.show {
+            display: block;
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .contact-item {
+            background: rgba(255, 255, 255, 0.95);
+            padding: 10px;
+            margin: 5px 0;
+            border-radius: 5px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            transition: background 0.3s ease;
+        }
+
+        .contact-item:hover {
+            background: #e0e0e0;
+        }
+
+        .contact-img {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+        }
+
+        /* Responsive Layout */
+        @media (min-width: 768px) {
+            .container {
+                display: grid;
+                grid-template-columns: repeat(3, 1fr);
+                gap: 20px;
+                width: 90%;
+                max-width: 1000px;
+                margin: auto;
+            }
+            .block {
+                max-width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+
 <div class="container">
 
-    <!-- Troubleshooting Block -->
+    <!-- Troubleshooting & Contact Team Combined Block -->
     <div class="block">
-        <h2 class="troubleshooting">🔧 Troubleshooting Team</h2>
-        
-        <div>
-            <img src="CONTACT_1_IMAGE_URL" alt="Person 1">
-            <p><strong>John Doe</strong><br>Technical Support<br>
-            <a href="tel:+1234567890" style="color: #0057b8;">📞 (123) 456-7890</a></p>
-        </div>
-
-        <div>
-            <img src="CONTACT_2_IMAGE_URL" alt="Person 2">
-            <p><strong>Jane Smith</strong><br>OR Specialist<br>
-            <a href="tel:+1987654321" style="color: #0057b8;">📞 (987) 654-3210</a></p>
-        </div>
-
-        <div>
-            <img src="CONTACT_3_IMAGE_URL" alt="Person 3">
-            <p><strong>Mike Johnson</strong><br>AV Technician<br>
-            <a href="tel:+1122334455" style="color: #0057b8;">📞 (112) 233-4455</a></p>
-        </div>
-
-        <div>
-            <img src="CONTACT_4_IMAGE_URL" alt="Person 4">
-            <p><strong>Sarah Lee</strong><br>IT Administrator<br>
-            <a href="tel:+1222333444" style="color: #0057b8;">📞 (122) 233-3444</a></p>
+        <h2 style="color: #0057b8;">🔧 Troubleshooting & Contacts</h2>
+        <p>If you need support, reach out to a team member below.</p>
+        <button onclick="toggleDropdown()" class="btn btn-contacts">View Contacts</button>
+        <div id="contactDropdown" class="dropdown">
+            <div class="contact-item">
+                <img src="https://via.placeholder.com/50" class="contact-img" alt="John Doe">
+                <span>John Doe - Support</span>
+            </div>
+            <div class="contact-item">
+                <img src="https://via.placeholder.com/50" class="contact-img" alt="Jane Smith">
+                <span>Jane Smith - Tech Lead</span>
+            </div>
+            <div class="contact-item">
+                <img src="https://via.placeholder.com/50" class="contact-img" alt="Mark Johnson">
+                <span>Mark Johnson - IT Specialist</span>
+            </div>
         </div>
     </div>
 
     <!-- Feedback Survey Block -->
     <div class="block">
-        <h2>📋 Feedback Survey</h2>
+        <h2 style="color: #28a745;">📋 Feedback Survey</h2>
         <p>Share your thoughts to help us improve.</p>
-        <a href="YOUR_SURVEY_LINK_HERE" class="feedback">Take the Survey</a>
+        <a href="#" class="btn btn-survey">Take the Survey</a>
     </div>
 
     <!-- CollaboratOR Guide Block -->
     <div class="block">
-        <h2>📖 CollaboratOR Guide</h2>
+        <h2 style="color: #ff9800;">📖 CollaboratOR Guide</h2>
         <p>Need help using CollaboratOR? View the guide.</p>
-        <a href="YOUR_USER_GUIDE_LINK_HERE" class="guide">View Guide</a>
+        <a href="#" class="btn btn-guide">View Guide</a>
     </div>
 
 </div>
+
+<script>
+    function toggleDropdown() {
+        var dropdown = document.getElementById("contactDropdown");
+        dropdown.classList.toggle("show");
+    }
+</script>
+
+</body>
+</html>
