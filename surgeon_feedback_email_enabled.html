@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8">
+<title>CollaboratOR Surgeon Feedback</title>
+
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        padding: 20px;
+        background: #f5f7fa;
+        color: #333;
+        max-width: 600px;
+        margin: auto;
+    }
+    h2 {
+        text-align: center;
+        color: #003a70;
+        font-weight: 600;
+    }
+    label {
+        display: block;
+        margin-top: 15px;
+        font-size: 16px;
+        font-weight: 600;
+    }
+    .rating {
+        display: flex;
+        justify-content: space-between;
+        margin: 10px 0;
+    }
+    .rating label {
+        font-weight: 400;
+    }
+    textarea {
+        width: 100%;
+        height: 80px;
+        border: 1px solid #ccc;
+        border-radius: 8px;
+        padding: 10px;
+        resize: none;
+        font-size: 15px;
+    }
+    input[type="text"],
+    input[type="date"] {
+        width: 100%;
+        padding: 10px;
+        border-radius: 8px;
+        border: 1px solid #ccc;
+        margin-top: 5px;
+        font-size: 15px;
+    }
+    button {
+        width: 100%;
+        padding: 15px;
+        background: #003a70;
+        color: #fff;
+        font-size: 18px;
+        border: none;
+        border-radius: 10px;
+        margin-top: 25px;
+        cursor: pointer;
+    }
+</style>
+</head>
+
+<body>
+
+<h2>ACB CollaboratOR – Surgeon Quick Feedback</h2>
+
+<form action="https://formspree.io/f/your_form_id_here" method="POST">
+
+    <input type="hidden" name="_subject" value="ACB CollaboratOR Surgeon Feedback Submission">
+
+    <label>Surgeon Name</label>
+    <input type="text" name="surgeon_name" placeholder="Your name" required>
+
+    <label>Date</label>
+    <input type="date" name="date" required>
+
+    <label>OR Room</label>
+    <input type="text" name="or_room" placeholder="1–6" required>
+
+    <label>Pre-Op Setup Experience</label>
+    <div class="rating">
+        <label><input type="radio" name="preop_experience" value="1" required>1</label>
+        <label><input type="radio" name="preop_experience" value="2">2</label>
+        <label><input type="radio" name="preop_experience" value="3">3</label>
+        <label><input type="radio" name="preop_experience" value="4">4</label>
+        <label><input type="radio" name="preop_experience" value="5">5</label>
+    </div>
+
+    <label>Intra-Op Layout / Views</label>
+    <div class="rating">
+        <label><input type="radio" name="intraop_layout" value="1" required>1</label>
+        <label><input type="radio" name="intraop_layout" value="2">2</label>
+        <label><input type="radio" name="intraop_layout" value="3">3</label>
+        <label><input type="radio" name="intraop_layout" value="4">4</label>
+        <label><input type="radio" name="intraop_layout" value="5">5</label>
+    </div>
+
+    <label>Live Stream Quality (if used)</label>
+    <div class="rating">
+        <label><input type="radio" name="live_stream_quality" value="1">1</label>
+        <label><input type="radio" name="live_stream_quality" value="2">2</label>
+        <label><input type="radio" name="live_stream_quality" value="3">3</label>
+        <label><input type="radio" name="live_stream_quality" value="4">4</label>
+        <label><input type="radio" name="live_stream_quality" value="5">5</label>
+    </div>
+
+    <label>Overall Satisfaction</label>
+    <div class="rating">
+        <label><input type="radio" name="overall_satisfaction" value="1" required>1</label>
+        <label><input type="radio" name="overall_satisfaction" value="2">2</label>
+        <label><input type="radio" name="overall_satisfaction" value="3">3</label>
+        <label><input type="radio" name="overall_satisfaction" value="4">4</label>
+        <label><input type="radio" name="overall_satisfaction" value="5">5</label>
+    </div>
+
+    <label>Anything you'd like added or improved?</label>
+    <textarea name="comments" placeholder="Your feedback..."></textarea>
+
+    <button type="submit">Submit Feedback</button>
+
+</form>
+
+</body>
+</html>
